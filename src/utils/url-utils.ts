@@ -31,12 +31,23 @@ export function getCategoryUrl(category: string | null): string {
 	return url(`/archive/?category=${encodeURIComponent(category.trim())}`);
 }
 
-export function getDir(path: string): string {
-	const lastSlashIndex = path.lastIndexOf("/");
+export function getDir(pathStr: string): string {
+	const lastSlashIndex = pathStr.lastIndexOf("/");
 	if (lastSlashIndex < 0) {
 		return "/";
 	}
-	return path.substring(0, lastSlashIndex + 1);
+	return pathStr.substring(0, lastSlashIndex + 1);
+}
+
+export function getPostDir(entry: any): string {
+	if (entry.filePath) {
+		const normalized = entry.filePath.replace(/\\/g, "/");
+		const match = normalized.match(/content\/posts\/(.*)$/);
+		if (match) {
+			return getDir(match[1]);
+		}
+	}
+	return getDir(entry.id);
 }
 
 export function url(path: string) {

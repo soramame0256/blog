@@ -1,5 +1,6 @@
 import I18nKey from "@i18n/i18nKey";
 import { i18n } from "@i18n/translation";
+import type { CollectionEntry } from "astro:content";
 
 export function pathsEqual(path1: string, path2: string) {
 	const normalizedPath1 = path1.replace(/^\/|\/$/g, "").toLowerCase();
@@ -39,7 +40,7 @@ export function getDir(pathStr: string): string {
 	return pathStr.substring(0, lastSlashIndex + 1);
 }
 
-export function getPostDir(entry: any): string {
+export function getPostDir(entry: CollectionEntry<"posts">): string {
 	if (entry.filePath) {
 		const normalized = entry.filePath.replace(/\\/g, "/");
 		const match = normalized.match(/content\/posts\/(.*)$/);

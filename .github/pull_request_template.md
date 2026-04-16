@@ -1,37 +1,22 @@
-## Type of change
+## 内容
+<!--
+このpull requestで行ったことなど。
+-->
 
-- [ ] Bug fix (a non-breaking change that fixes an issue)
-- [ ] New feature (a non-breaking change that adds functionality)
-- [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
-- [ ] Other (please describe):
+## 問題点
+<!--
+自己判断で何か問題点があればその実装箇所について記述してください
+-->
 
-## Checklist
+## 影響や互換性
+<!--
+既存機能に変更を加えた場合など、後方互換性が維持できなくなる可能性がある変更や、
+将来的にコード上問題が発生する可能性がある場所について記述してください。
+-->
 
-- [ ] I have read the [**CONTRIBUTING**](https://github.com/saicaca/fuwari/blob/main/CONTRIBUTING.md) document.
-- [ ] I have checked to ensure that this Pull Request is not for personal changes.
-- [ ] I have performed a self-review of my own code.
-- [ ] My changes generate no new warnings.
+## 備考
+<!--
+何かレビュー時に有用な情報やその他残しておきたいものがあれば記述してください。
+-->
 
-## Related Issue
-
-<!-- Please link to the issue that this pull request addresses. e.g. #123 -->
-
-
-## Changes
-
-<!-- Please describe the changes you made in this pull request. -->
-
-
-## How To Test
-
-<!-- Please describe how you tested your changes. -->
-
-
-## Screenshots (if applicable)
-
-<!-- If you made any UI changes, please include screenshots. -->
-
-
-## Additional Notes
-
-<!-- Any additional information that you want to share with the reviewer. -->
+**できるだけ多くの箇所を埋め、埋めることができなかった項目についてはすべて削除してください。**

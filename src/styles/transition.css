@@ -24,6 +24,12 @@ html.is-animating .transition-swup-fade {
     animation: 300ms fade-in-up;
     animation-fill-mode: forwards;
 }
+/* Applied to onload-animation elements outside Swup containers after first load.
+   Prevents re-animation on subsequent Swup navigations (e.g. Navbar, SideBar, Footer). */
+.animation-loaded {
+    animation: none;
+    opacity: 1;
+}
 #navbar {
     animation-delay: 0ms
 }

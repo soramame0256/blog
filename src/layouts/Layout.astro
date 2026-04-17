@@ -426,11 +426,26 @@ const setup = () => {
 			toc.classList.add('toc-not-ready')
 		}
 	});
+	// Mark onload-animation elements outside Swup containers as already animated
+	// to prevent them from re-animating on every navigation.
+	// Swup only replaces <main> and #toc, so elements like Navbar, SideBar, Footer
+	// remain in the DOM but their CSS animations can be re-triggered by reflows.
+	const swupContainers = document.querySelectorAll('main, #toc');
+	const allAnimated = document.querySelectorAll('.onload-animation');
+	allAnimated.forEach(el => {
+		let insideContainer = false;
+		swupContainers.forEach(container => {
+			if (container.contains(el)) insideContainer = true;
+		});
+		if (!insideContainer) {
+			el.classList.add('animation-loaded');
+		}
+	});
 	window.swup.hooks.on('page:view', () => {
 		// hide the temp high element when the transition is done
 		const heightExtend = document.getElementById('page-height-extend')
 		if (heightExtend) {
-			heightExtend.classList.remove('hidden')
+			heightExtend.classList.add('hidden')
 		}
 	});
 	window.swup.hooks.on('visit:end', (_visit: {to: {url: string}}) => {
